@@ -1,13 +1,10 @@
-CC=gcc
-CFLAGS=-I.
+CC = gcc
+CFLAGS = -pthread -lm
 
-all : parallel_min_max process_memory
+all: parallel_sum
 
-parallel_min_max : utils.o find_min_max.o utils.h find_min_max.h
-	$(CC) -o parallel_min_max utils.o find_min_max.o parallel_min_max.c $(CFLAGS)
+parallel_sum : utils.o parallel_sum
+	$(CC) -o parallel_sum utils.o parallel_sum.c $(CFLAGS)
 
-process_memory : process_memory
-	$(CC) -o process_memory process_memory.c $(CFLAGS)
-
-clean :
-	rm process_memory parallel_min_max
+clean:
+	rm -f parallel_sum
