@@ -2,6 +2,7 @@
     "files.associations": {
         "revert_string.h": "c",
         "unistd.h": "c",
-        "wait.h": "c"
+        "wait.h": "c",
+        "library.h": "c"
     }
 }
